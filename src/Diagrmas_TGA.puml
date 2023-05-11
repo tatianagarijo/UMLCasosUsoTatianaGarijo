@@ -1,11 +1,11 @@
 @startuml
     left to right direction
 
-    usecase "Baja Socio" as uc1
-    usecase "Buscar Socio" as uc2
+    usecase "Evaluar solicitud\n de crédito" as uc1
+    usecase "Solicitar información\n adicional al cliente" as uc2
 
-    :Bibliotecario: as bibli
+    :Agente: as agn
 
-    bibli --> uc1
-    uc1 ..> uc2 : <<include>>
+    agn --> uc1
+    uc1 <|-- uc2 : <<extend>>
 @enduml
