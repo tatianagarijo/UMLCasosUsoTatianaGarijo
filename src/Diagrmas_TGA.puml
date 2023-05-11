@@ -1,11 +1,25 @@
 @startuml
-
-    :Cliente Bancario: as ban
-    :Cliente Corporativo: as cor
-    :Cliente Normal: as norm
-
-
-    ban <|--- cor
-    ban <|--- norm
-
+    left to right direction
+    :Empleado: as emp
+    :Administrador: as admin
+    rectangle "Empresa Pedido"{
+        usecase "Introducir Pedido" as uc1
+        usecase "Cancelar Pedido" as uc2
+        usecase "Obtener estado Pedido" as uc3
+        usecase "Borrar Pedido" as uc4
+        usecase "Buscar Pedido" as uc5
+        usecase "Alta Cliente" as uc6
+        usecase "Buscar Cliente" as uc7
+        usecase "Nuevo Producto" as uc8
+        usecase "Borrar Producto" as uc9
+    }
+    emp -u- uc1
+    emp -- uc2
+    emp -- uc3
+    emp -- uc4
+    emp -- uc5
+    emp -- uc6
+    emp -- uc7
+    admin -u- uc8
+    admin -l- uc9
 @enduml
