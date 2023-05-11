@@ -1,17 +1,11 @@
 @startuml
     left to right direction
-    :Socio: as soc
-    rectangle Biblioteca{
-        usecase "Reservar\n Libro" as uc1
-        usecase "Prestar\n Libro" as uc2
-        usecase "Devolver\n Libro" as uc3
-        usecase "Actualizar\n Catálogo" as uc4
-    }
-    :Bibliotecario: as bibli
-    soc --- uc1
-    soc --- uc2
-    soc --- uc3
-    uc2 --- bibli
-    uc4 --- bibli
 
+    usecase "Baja Socio" as uc1
+    usecase "Buscar Socio" as uc2
+
+    :Bibliotecario: as bibli
+
+    bibli --> uc1
+    uc1 ..> uc2 : <<include>>
 @enduml
