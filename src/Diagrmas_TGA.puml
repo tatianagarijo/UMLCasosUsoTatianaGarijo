@@ -1,25 +1,28 @@
 @startuml
     left to right direction
     :Empleado: as emp
-    :Administrador: as admin
-    rectangle "Empresa Pedido"{
-        usecase "Introducir Pedido" as uc1
-        usecase "Cancelar Pedido" as uc2
+
+        usecase "Alta Cliente" as uc1
+        usecase "Introducir Pedido" as uc2
         usecase "Obtener estado Pedido" as uc3
-        usecase "Borrar Pedido" as uc4
-        usecase "Buscar Pedido" as uc5
-        usecase "Alta Cliente" as uc6
-        usecase "Buscar Cliente" as uc7
-        usecase "Nuevo Producto" as uc8
-        usecase "Borrar Producto" as uc9
-    }
-    emp -u- uc1
-    emp -- uc2
-    emp -- uc3
+        usecase "Buscar Pedido" as uc4
+        usecase "Cancelar Pedido" as uc5
+        usecase "Buscar Cliente" as uc6
+        usecase "Pago con Tarjeta" as uc7
+        usecase "Pago en cuenta" as uc8
+
+    emp - uc1
+    emp --- uc2
+    emp --- uc3
     emp -- uc4
     emp -- uc5
-    emp -- uc6
-    emp -- uc7
-    admin -u- uc8
-    admin -l- uc9
+
+
+    uc2 <|-left-- uc1 : extiende
+    uc2 <|-- uc7 : extiende
+     uc2 <|-- uc8 : extiende
+
+    uc2 ..> uc6 : incluye
+    uc3 ..> uc4 : incluye
+    uc5 ..> uc4 : incluye
 @enduml
