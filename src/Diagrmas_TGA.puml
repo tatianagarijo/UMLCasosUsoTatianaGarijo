@@ -1,11 +1,12 @@
 @startuml
-    left to right direction
-
-    usecase "Evaluar solicitud\n de crédito" as uc1
-    usecase "Solicitar información\n adicional al cliente" as uc2
 
     :Agente: as agn
 
-    agn --> uc1
-    uc1 <|-- uc2 : <<extend>>
+    usecase "  Evaluar solicitud de crédito " as uc1
+    usecase "Enviar solicitud\n de crédito\n personal" as uc2
+    usecase "Enviar solicitud\n de crédito\n empresarial" as uc3
+
+    agn -right-> uc1
+    uc1 <|-- uc2
+    uc1 <|-- uc3
 @enduml
