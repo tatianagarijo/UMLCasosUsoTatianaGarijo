@@ -1,16 +1,17 @@
 @startuml
     left to right direction
-    :actor1: as act1
-    rectangle Sistema{
-        usecase "caso de\n uso 1" as uc1
-        usecase "caso de\n uso 2" as uc2
-        usecase "caso de\n uso 3" as uc3
+    :Socio: as soc
+    rectangle Biblioteca{
+        usecase "Reservar\n Libro" as uc1
+        usecase "Prestar\n Libro" as uc2
+        usecase "Devolver\n Libro" as uc3
+        usecase "Actualizar\n Catálogo" as uc4
     }
-    :actor2: as act2
-    act1 --- uc1
-    act1 --- uc2
-    act1 --- uc3
-    uc1 --- act2
-    uc3 --- act2
+    :Bibliotecario: as bibli
+    soc --- uc1
+    soc --- uc2
+    soc --- uc3
+    uc2 --- bibli
+    uc4 --- bibli
 
 @enduml
