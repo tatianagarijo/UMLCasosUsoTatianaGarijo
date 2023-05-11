@@ -1,12 +1,11 @@
 @startuml
 
-    :Agente: as agn
+    :Cliente Bancario: as ban
+    :Cliente Corporativo: as cor
+    :Cliente Normal: as norm
 
-    usecase "  Evaluar solicitud de crédito " as uc1
-    usecase "Enviar solicitud\n de crédito\n personal" as uc2
-    usecase "Enviar solicitud\n de crédito\n empresarial" as uc3
 
-    agn -right-> uc1
-    uc1 <|-- uc2
-    uc1 <|-- uc3
+    ban <|--- cor
+    ban <|--- norm
+
 @enduml
